@@ -1,245 +1,246 @@
 <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyectos | Eliseo Studio</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
-            
-            body { 
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-                background-color: #000; 
-                color: #fff;
-                -webkit-font-smoothing: antialiased;
-                overflow-x: hidden;
-            }
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Eliseo Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #000; 
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-            .bento-card {
-                background: #0a0a0a;
-                border: 1px solid #1c1c1e;
-                border-radius: 40px;
-                overflow: hidden;
-                transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-                display: flex;
-                flex-direction: column;
-            }
+        .bento-card {
+            background: #0a0a0a;
+            border: 1px solid #1c1c1e;
+            border-radius: 40px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+        }
 
-            .bento-card:hover {
-                border-color: #333336;
-                transform: translateY(-8px);
-                background: #0f0f10;
-            }
+        .bento-card:hover {
+            border-color: #333336;
+            transform: translateY(-8px);
+            background: #0f0f10;
+        }
 
-            .preview-window {
-                height: 240px;
-                background: #050505;
-                position: relative;
-                overflow: hidden;
-                border-bottom: 1px solid #1c1c1e;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+        .preview-window {
+            height: 240px;
+            background: #050505;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #1c1c1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            /* Mockup de Eme Vet */
-            .mockup-vet {
-                background: white;
-                width: 85%;
-                height: 180px;
-                margin-top: 40px;
-                border-radius: 24px 24px 0 0;
-                padding: 20px;
-                box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-                transform: translateY(20px);
-                transition: transform 0.5s ease;
-            }
-            .bento-card:hover .mockup-vet { transform: translateY(0px); }
+        /* Mockup de Eme Vet */
+        .mockup-vet {
+            background: white;
+            width: 85%;
+            height: 180px;
+            margin-top: 40px;
+            border-radius: 24px 24px 0 0;
+            padding: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+        .bento-card:hover .mockup-vet { transform: translateY(0px); }
 
-            /* Mockup de Showroom (Grid Visual) */
-            .mockup-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-                padding: 24px;
-                width: 100%;
-            }
-            .mock-item {
-                background: #1c1c1e;
-                border-radius: 16px;
-                height: 120px;
-                position: relative;
-                overflow: hidden;
-                border: 1px solid rgba(255,255,255,0.05);
-            }
+        /* Mockup de Showroom (Grid Visual) */
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 24px;
+            width: 100%;
+        }
+        .mock-item {
+            background: #1c1c1e;
+            border-radius: 16px;
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
 
-            /* Mockup de Identity Card */
-            .mockup-iphone {
-                width: 130px;
-                height: 240px;
-                background: #000;
-                border-radius: 36px;
-                border: 4px solid #1c1c1e;
-                padding: 10px;
-                position: relative;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            }
+        /* Mockup de Identity Card */
+        .mockup-iphone {
+            width: 130px;
+            height: 240px;
+            background: #000;
+            border-radius: 36px;
+            border: 4px solid #1c1c1e;
+            padding: 10px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
 
-            .status-badge {
-                background: rgba(255, 255, 255, 0.04);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                border-radius: 100px;
-            }
+        .status-badge {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+        }
 
-            .back-nav {
-                background: rgba(255, 255, 255, 0.03);
-                backdrop-filter: blur(15px);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.3s ease;
-            }
+        .back-nav {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
 
-            .back-nav:hover {
-                background: rgba(255, 255, 255, 0.08);
-                transform: scale(1.1);
-            }
+        .back-nav:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: scale(1.1);
+        }
 
-            .fade-up {
-                animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            }
+        .fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-            @keyframes fadeUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        </style>
-    </head>
-    <body class="p-6 md:p-16">
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-6 md:p-16">
 
-        <!-- Global Navigation -->
-        <nav class="max-w-5xl mx-auto flex items-center justify-between mb-20 fade-up">
-            <a href="tarjeta_apple_pro_black.html" class="back-nav">
-                <i class="fa-solid fa-chevron-left text-gray-400"></i>
-            </a>
-            <div class="text-right">
-                <p class="text-[10px] font-bold text-blue-500 uppercase tracking-[0.4em] mb-2">Showcase v2.0</p>
-                <h1 class="text-3xl font-semibold tracking-tighter">Proyectos de Élite</h1>
+    <!-- Global Navigation -->
+    <nav class="max-w-5xl mx-auto flex items-center justify-between mb-20 fade-up">
+        <!-- Enlace actualizado a la tarjeta de presentación externa -->
+        <a href="https://chomp-best.github.io/tarjetadepresentiacion/" class="back-nav">
+            <i class="fa-solid fa-chevron-left text-gray-400"></i>
+        </a>
+        <div class="text-right">
+            <p class="text-[10px] font-bold text-blue-500 uppercase tracking-[0.4em] mb-2">Showcase v2.0</p>
+            <h1 class="text-3xl font-semibold tracking-tighter">Proyectos de Élite</h1>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 fade-up" style="animation-delay: 0.1s;">
+
+        <!-- PROYECTO 1: Eme Vet -->
+        <article class="bento-card">
+            <div class="preview-window">
+                <div class="mockup-vet">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-paw text-blue-600"></i>
+                        </div>
+                        <div class="w-16 h-3 bg-gray-100 rounded-full"></div>
+                    </div>
+                    <div class="h-6 w-3/4 bg-gray-900 rounded-lg mb-3"></div>
+                    <div class="h-2 w-1/2 bg-gray-200 rounded-full mb-6"></div>
+                    <div class="h-12 w-full bg-blue-600 rounded-2xl"></div>
+                </div>
             </div>
-        </nav>
+            <div class="p-10">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-blue-400 uppercase tracking-widest">Salud</span>
+                    <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">2025</span>
+                </div>
+                <h2 class="text-2xl font-bold mb-3 tracking-tight">Eme Vet Web App</h2>
+                <p class="text-sm text-gray-500 leading-relaxed mb-8">
+                    Optimización del flujo de atención para emergencias veterinarias. Interfaz quirúrgica diseñada para la toma de decisiones rápida.
+                </p>
+                <a href="index.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-blue-500 transition-colors group">
+                    Explorar Solución <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </article>
 
-        <main class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 fade-up" style="animation-delay: 0.1s;">
-
-            <!-- PROYECTO 1: Eme Vet -->
-            <article class="bento-card">
-                <div class="preview-window">
-                    <div class="mockup-vet">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-                                <i class="fa-solid fa-paw text-blue-600"></i>
-                            </div>
-                            <div class="w-16 h-3 bg-gray-100 rounded-full"></div>
-                        </div>
-                        <div class="h-6 w-3/4 bg-gray-900 rounded-lg mb-3"></div>
-                        <div class="h-2 w-1/2 bg-gray-200 rounded-full mb-6"></div>
-                        <div class="h-12 w-full bg-blue-600 rounded-2xl"></div>
+        <!-- PROYECTO 2: Showroom Bloom -->
+        <article class="bento-card">
+            <div class="preview-window">
+                <div class="mockup-grid">
+                    <div class="mock-item">
+                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="mock-item">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                 </div>
-                <div class="p-10">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-blue-400 uppercase tracking-widest">Salud</span>
-                        <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">2025</span>
-                    </div>
-                    <h2 class="text-2xl font-bold mb-3 tracking-tight">Eme Vet Web App</h2>
-                    <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                        Optimización del flujo de atención para emergencias veterinarias. Interfaz quirúrgica diseñada para la toma de decisiones rápida.
-                    </p>
-                    <a href="index.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-blue-500 transition-colors group">
-                        Explorar Solución <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+            </div>
+            <div class="p-10">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-purple-400 uppercase tracking-widest">Moda</span>
                 </div>
-            </article>
+                <h2 class="text-2xl font-bold mb-3 tracking-tight">Bloom Fashion Hub</h2>
+                <p class="text-sm text-gray-500 leading-relaxed mb-8">
+                    Catálogo dinámico que automatiza el inventario y conecta la venta directa con WhatsApp. Estética visual de alta costura.
+                </p>
+                <a href="index.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-purple-500 transition-colors group">
+                    Ver Catálogo <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </article>
 
-            <!-- PROYECTO 2: Showroom Bloom -->
-            <article class="bento-card">
-                <div class="preview-window">
-                    <div class="mockup-grid">
-                        <div class="mock-item">
-                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Moda">
-                        </div>
-                        <div class="mock-item">
-                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Moda 2">
-                        </div>
-                    </div>
-                </div>
-                <div class="p-10">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-purple-400 uppercase tracking-widest">Moda</span>
-                    </div>
-                    <h2 class="text-2xl font-bold mb-3 tracking-tight">Bloom Fashion Hub</h2>
-                    <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                        Catálogo dinámico que automatiza el inventario y conecta la venta directa con WhatsApp. Estética visual de alta costura.
-                    </p>
-                    <a href="index.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-purple-500 transition-colors group">
-                        Ver Catálogo <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- PROYECTO 3: AI Digital Card -->
-            <article class="bento-card">
-                <div class="preview-window">
-                    <div class="mockup-iphone">
-                        <div class="w-8 h-8 bg-white rounded-lg mx-auto mt-6 mb-4"></div>
-                        <div class="h-1 w-10 bg-white/20 mx-auto rounded-full mb-8"></div>
-                        <div class="space-y-3 px-2">
-                            <div class="h-10 w-full bg-white/5 rounded-xl border border-white/10"></div>
-                            <div class="h-10 w-full bg-white rounded-xl"></div>
-                        </div>
+        <!-- PROYECTO 3: AI Digital Card -->
+        <article class="bento-card">
+            <div class="preview-window">
+                <div class="mockup-iphone">
+                    <div class="w-8 h-8 bg-white rounded-lg mx-auto mt-6 mb-4"></div>
+                    <div class="h-1 w-10 bg-white/20 mx-auto rounded-full mb-8"></div>
+                    <div class="space-y-3 px-2">
+                        <div class="h-10 w-full bg-white/5 rounded-xl border border-white/10"></div>
+                        <div class="h-10 w-full bg-white rounded-xl"></div>
                     </div>
                 </div>
-                <div class="p-10">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-yellow-500 uppercase tracking-widest">Tech</span>
-                    </div>
-                    <h2 class="text-2xl font-bold mb-3 tracking-tight">Identity AI Card</h2>
-                    <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                        Tu tarjeta de presentación digital con motor de IA Gemini integrado. Consultoría estratégica disponible 24/7 para tus clientes.
-                    </p>
-                    <a href="https://chomp-best.github.io/ia/" target="_blank" class="inline-flex items-center text-sm font-semibold text-white hover:text-yellow-500 transition-colors group">
-                        Probar IA <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+            </div>
+            <div class="p-10">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-yellow-500 uppercase tracking-widest">Tech</span>
                 </div>
-            </article>
+                <h2 class="text-2xl font-bold mb-3 tracking-tight">Identity AI Card</h2>
+                <p class="text-sm text-gray-500 leading-relaxed mb-8">
+                    Tu tarjeta de presentación digital con motor de IA Gemini integrado. Consultoría estratégica disponible 24/7 para tus clientes.
+                </p>
+                <a href="tarjeta_apple_pro_black.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-yellow-500 transition-colors group">
+                    Probar IA <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </article>
 
-            <!-- PROYECTO 4: Próximamente -->
-            <article class="bento-card border-dashed border-white/10 bg-transparent">
-                <div class="preview-window opacity-20">
-                    <i class="fa-solid fa-plus text-5xl text-white"></i>
-                </div>
-                <div class="p-10">
-                    <h2 class="text-2xl font-bold mb-3 tracking-tight text-gray-600">Tu Proyecto Aquí</h2>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-8">
-                        Estoy buscando el próximo desafío para aplicar diseño de vanguardia y automatización inteligente.
-                    </p>
-                    <a href="https://wa.me/5493795041420?text=Hola%20Eliseo,%20me%20interesa%20iniciar%20un%20nuevo%20proyecto%20con%20vos." target="_blank" class="text-sm font-bold text-blue-500 uppercase tracking-widest hover:text-blue-400 transition-colors">
-                        Iniciar Consultoría
-                    </a>
-                </div>
-            </article>
+        <!-- PROYECTO 4: Próximamente -->
+        <article class="bento-card border-dashed border-white/10 bg-transparent">
+            <div class="preview-window opacity-20">
+                <i class="fa-solid fa-plus text-5xl text-white"></i>
+            </div>
+            <div class="p-10">
+                <h2 class="text-2xl font-bold mb-3 tracking-tight text-gray-600">Tu Proyecto Aquí</h2>
+                <p class="text-sm text-gray-700 leading-relaxed mb-8">
+                    Estoy buscando el próximo desafío para aplicar diseño de vanguardia y automatización inteligente.
+                </p>
+                <a href="https://wa.me/TU_NUMERO_AQUI" class="text-sm font-bold text-blue-500 uppercase tracking-widest">
+                    Iniciar Consultoría
+                </a>
+            </div>
+        </article>
 
-        </main>
+    </main>
 
-        <footer class="max-w-5xl mx-auto mt-32 text-center py-12 border-t border-white/5 opacity-40">
-            <p class="text-[9px] font-bold tracking-[0.6em] uppercase">Built with Integrity & Excellence — Eliseo Studio</p>
-        </footer>
+    <footer class="max-w-5xl mx-auto mt-32 text-center py-12 border-t border-white/5 opacity-40">
+        <p class="text-[9px] font-bold tracking-[0.6em] uppercase">Built with Integrity & Excellence — Eliseo Studio</p>
+    </footer>
 
-    </body>
-    </html>
+</body>
+</html>
