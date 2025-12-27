@@ -25,6 +25,7 @@
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .bento-card:hover {
@@ -126,7 +127,6 @@
 
     <!-- Global Navigation -->
     <nav class="max-w-5xl mx-auto flex items-center justify-between mb-20 fade-up">
-        <!-- Enlace actualizado a la tarjeta de presentación externa -->
         <a href="https://chomp-best.github.io/tarjetadepresentiacion/" class="back-nav">
             <i class="fa-solid fa-chevron-left text-gray-400"></i>
         </a>
@@ -153,7 +153,7 @@
                     <div class="h-12 w-full bg-blue-600 rounded-2xl"></div>
                 </div>
             </div>
-            <div class="p-10">
+            <div class="p-10 flex flex-col flex-grow">
                 <div class="flex items-center space-x-3 mb-6">
                     <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-blue-400 uppercase tracking-widest">Salud</span>
                     <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">2025</span>
@@ -162,9 +162,11 @@
                 <p class="text-sm text-gray-500 leading-relaxed mb-8">
                     Optimización del flujo de atención para emergencias veterinarias. Interfaz quirúrgica diseñada para la toma de decisiones rápida.
                 </p>
-                <a href="index.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-blue-500 transition-colors group">
-                    Explorar Solución <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                </a>
+                <div class="mt-auto">
+                    <a href="#" class="inline-flex items-center text-sm font-semibold text-white hover:text-blue-500 transition-colors group">
+                        Explorar Solución <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </article>
 
@@ -180,7 +182,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-10">
+            <div class="p-10 flex flex-col flex-grow">
                 <div class="flex items-center space-x-3 mb-6">
                     <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-purple-400 uppercase tracking-widest">Moda</span>
                 </div>
@@ -188,9 +190,11 @@
                 <p class="text-sm text-gray-500 leading-relaxed mb-8">
                     Catálogo dinámico que automatiza el inventario y conecta la venta directa con WhatsApp. Estética visual de alta costura.
                 </p>
-                <a href="index.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-purple-500 transition-colors group">
-                    Ver Catálogo <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                </a>
+                <div class="mt-auto">
+                    <a href="#" class="inline-flex items-center text-sm font-semibold text-white hover:text-purple-500 transition-colors group">
+                        Ver Catálogo <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </article>
 
@@ -206,7 +210,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-10">
+            <div class="p-10 flex flex-col flex-grow">
                 <div class="flex items-center space-x-3 mb-6">
                     <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-yellow-500 uppercase tracking-widest">Tech</span>
                 </div>
@@ -214,9 +218,11 @@
                 <p class="text-sm text-gray-500 leading-relaxed mb-8">
                     Tu tarjeta de presentación digital con motor de IA Gemini integrado. Consultoría estratégica disponible 24/7 para tus clientes.
                 </p>
-                <a href="tarjeta_apple_pro_black.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-yellow-500 transition-colors group">
-                    Probar IA <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                </a>
+                <div class="mt-auto">
+                    <a href="#" class="inline-flex items-center text-sm font-semibold text-white hover:text-yellow-500 transition-colors group">
+                        Probar IA <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </article>
 
@@ -225,14 +231,19 @@
             <div class="preview-window opacity-20">
                 <i class="fa-solid fa-plus text-5xl text-white"></i>
             </div>
-            <div class="p-10">
-                <h2 class="text-2xl font-bold mb-3 tracking-tight text-gray-600">Tu Proyecto Aquí</h2>
-                <p class="text-sm text-gray-700 leading-relaxed mb-8">
+            <div class="p-10 flex flex-col flex-grow">
+                <h2 class="text-2xl font-bold mb-3 tracking-tight text-gray-300">Tu Proyecto Aquí</h2>
+                <p class="text-sm text-gray-500 leading-relaxed mb-8">
                     Estoy buscando el próximo desafío para aplicar diseño de vanguardia y automatización inteligente.
                 </p>
-                <a href="https://wa.me/TU_NUMERO_AQUI" class="text-sm font-bold text-blue-500 uppercase tracking-widest">
-                    Iniciar Consultoría
-                </a>
+                <div class="mt-auto">
+                    <!-- Enlace de WhatsApp actualizado -->
+                    <a href="https://wa.me/5437950411420?text=Hola%20Eliseo%2C%20me%20gustar%C3%ADa%20iniciar%20un%20proyecto%20con%20tu%20studio." 
+                       target="_blank"
+                       class="inline-flex items-center text-sm font-bold text-blue-500 uppercase tracking-widest hover:text-blue-400 transition-colors group">
+                        Iniciar Consultoría <i class="fa-solid fa-paper-plane ml-3 text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </article>
 
