@@ -1,257 +1,274 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos | Eliseo Studio</title>
+    <title>Showcase | Eliseo Studio Premium Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
-        
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #000; 
-            color: #fff;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .bento-card {
-            background: #0a0a0a;
-            border: 1px solid #1c1c1e;
+        /* Apple Premium Tokens */
+        .glass-navbar {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .premium-card {
             border-radius: 40px;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .bento-card:hover {
-            border-color: #333336;
-            transform: translateY(-8px);
-            background: #0f0f10;
+        .section-badge {
+            letter-spacing: 0.5em;
+            font-size: 0.6rem;
+            font-weight: 800;
         }
 
-        .preview-window {
-            height: 240px;
-            background: #050505;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid #1c1c1e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .negative-tracking {
+            letter-spacing: -0.05em;
         }
 
-        /* Mockup de Eme Vet */
-        .mockup-vet {
-            background: white;
-            width: 85%;
-            height: 180px;
-            margin-top: 40px;
-            border-radius: 24px 24px 0 0;
-            padding: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            transform: translateY(20px);
-            transition: transform 0.5s ease;
-        }
-        .bento-card:hover .mockup-vet { transform: translateY(0px); }
-
-        /* Mockup de Showroom (Grid Visual) */
-        .mockup-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 24px;
-            width: 100%;
-        }
-        .mock-item {
-            background: #1c1c1e;
-            border-radius: 16px;
-            height: 120px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+        /* Animations */
+        .fade-content {
+            animation: fadeDelayed 0.8s ease forwards;
         }
 
-        /* Mockup de Identity Card */
-        .mockup-iphone {
-            width: 130px;
-            height: 240px;
-            background: #000;
-            border-radius: 36px;
-            border: 4px solid #1c1c1e;
-            padding: 10px;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        }
-
-        .status-badge {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 100px;
-        }
-
-        .back-nav {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .back-nav:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: scale(1.1);
-        }
-
-        .fade-up {
-            animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        @keyframes fadeUp {
+        @keyframes fadeDelayed {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .demo-hidden { display: none; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
     </style>
 </head>
-<body class="p-6 md:p-16">
+<body class="selection:bg-white selection:text-black">
 
-    <!-- Global Navigation -->
-    <nav class="max-w-5xl mx-auto flex items-center justify-between mb-20 fade-up">
-        <a href="https://chomp-best.github.io/VC/" class="back-nav">
-            <i class="fa-solid fa-chevron-left text-gray-400"></i>
-        </a>
-        <div class="text-right">
-            <p class="text-[10px] font-bold text-blue-500 uppercase tracking-[0.4em] mb-2">Showcase v2.0</p>
-            <h1 class="text-3xl font-semibold tracking-tighter">Proyectos de Élite</h1>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 glass-navbar px-6 md:px-12 py-5">
+        <div class="max-w-screen-2xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <!-- Back Button -->
+                <a href="https://chomp-best.github.io/VC/" class="flex items-center gap-2 group">
+                    <svg class="text-gray-500 group-hover:text-white group-hover:-translate-x-1 transition-all" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                    <span class="section-badge uppercase text-gray-500 group-hover:text-white transition-colors hidden sm:block">Volver</span>
+                </a>
+
+                <div class="h-4 w-px bg-white/10"></div>
+
+                <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 bg-white rounded-lg flex items-center justify-center font-black text-black text-[10px]">E.</div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] font-black uppercase tracking-widest leading-none">Eliseo Studio</span>
+                        <span class="text-[7px] text-gray-500 uppercase tracking-[0.3em] mt-1">Showcase de Nivel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Selector Context -->
+            <div class="hidden lg:flex items-center mr-6">
+                <span class="section-badge text-gray-600 uppercase text-[8px]">Seleccionar Entorno de Prueba:</span>
+            </div>
+
+            <!-- Demo Selector -->
+            <div class="flex gap-4 md:gap-8">
+                <button onclick="switchDemo('showroom')" id="btn-showroom" class="nav-btn section-badge uppercase text-white border-b-2 border-white pb-1 transition-all">Showroom</button>
+                <button onclick="switchDemo('gastro')" id="btn-gastro" class="nav-btn section-badge uppercase text-gray-500 hover:text-white pb-1 border-b-2 border-transparent transition-all">Gastro</button>
+                <button onclick="switchDemo('wellness')" id="btn-wellness" class="nav-btn section-badge uppercase text-gray-500 hover:text-white pb-1 border-b-2 border-transparent transition-all">Wellness</button>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 fade-up" style="animation-delay: 0.1s;">
+    <!-- CONTENT AREAS -->
+    <main id="main-container" class="pt-32">
+        
+        <!-- DEMO 1: FASHION SHOWROOM -->
+        <div id="demo-showroom" class="demo-section fade-content">
+            <section class="px-6 py-20 text-center max-w-5xl mx-auto" style="padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="inline-flex items-center gap-3 mb-6 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+                    <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
+                    <span class="section-badge text-gray-400 uppercase">Muestrario de Aplicación 01 / Fashion Retail</span>
+                </div>
+                <h1 class="text-5xl md:text-[100px] font-black negative-tracking leading-none mb-10">
+                    SASTRERÍA DE <br><span class="text-transparent" style="-webkit-text-stroke: 1px #fff;">VANGUARDIA.</span>
+                </h1>
+                <p class="max-w-xl mx-auto text-gray-400 text-lg font-light leading-relaxed">
+                    Esta demo ilustra la infraestructura digital para marcas de moda de autor. Un entorno donde el diseño textil se encuentra con la autoridad visual absoluta.
+                </p>
+            </section>
 
-        <!-- PROYECTO 1: Eme Vet -->
-        <article class="bento-card">
-            <div class="preview-window">
-                <div class="mockup-vet">
-                    <div class="flex justify-between items-center mb-6">
-                        <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-paw text-blue-600"></i>
+            <section class="px-6 pb-32 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                <div class="premium-card h-[600px] bg-[#0A0A0A] border border-white/5 relative overflow-hidden group">
+                    <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-[1em] text-gray-800 italic">Atelier Core View</div>
+                    <div class="absolute bottom-12 left-12">
+                        <span class="section-badge text-white/40 block mb-2 uppercase">Colección Otoño 2025</span>
+                        <h3 class="text-2xl font-bold negative-tracking uppercase">Sartorial Signature</h3>
+                    </div>
+                </div>
+                <div class="premium-card h-[600px] bg-[#0A0A0A] border border-white/5 relative overflow-hidden group">
+                    <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-[1em] text-gray-800 italic">Textile Authority</div>
+                    <div class="absolute bottom-12 left-12">
+                        <span class="section-badge text-white/40 block mb-2 uppercase">Retail Experience</span>
+                        <h3 class="text-2xl font-bold negative-tracking uppercase">Showroom Minimal</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- DEMO 2: GASTRO -->
+        <div id="demo-gastro" class="demo-section demo-hidden fade-content">
+            <section class="px-6 py-20 text-center max-w-4xl mx-auto" style="padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="inline-flex items-center gap-3 mb-8 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+                    <div class="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></div>
+                    <span class="section-badge text-gray-600 uppercase">Muestrario de Aplicación 02 / Gastronomía</span>
+                </div>
+                <h2 class="text-6xl md:text-8xl font-light italic negative-tracking mb-4">Sora <span class="font-black not-italic">Dining</span></h2>
+                <div class="w-px h-24 bg-gradient-to-b from-white/20 to-transparent mx-auto my-12"></div>
+                <p class="section-badge text-gray-500 uppercase tracking-[0.8em]">Demostración de Experiencia Sensorial</p>
+            </section>
+
+            <section class="px-6 pb-32 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="premium-card bg-[#050505] border border-white/5 p-12 text-center hover:border-white/20">
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-widest">Plato Demo A</h4>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-8">Arquitectura de Menú</p>
+                    <span class="text-lg font-light text-white">$45.000</span>
+                </div>
+                <div class="premium-card bg-[#050505] border border-white/5 p-12 text-center hover:border-white/20">
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-widest">Plato Demo B</h4>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-8">Estructura de Costes</p>
+                    <span class="text-lg font-light text-white">$38.000</span>
+                </div>
+                <div class="premium-card bg-[#050505] border border-white/5 p-12 text-center hover:border-white/20">
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-widest">Plato Demo C</h4>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-8">Visual de Postre</p>
+                    <span class="text-lg font-light text-white">$12.000</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- DEMO 3: WELLNESS -->
+        <div id="demo-wellness" class="demo-section demo-hidden fade-content">
+            <div class="bg-[#F5F5F7] text-black min-h-screen">
+                <section class="px-6 py-20 text-center max-w-5xl mx-auto" style="padding-top: 5rem; padding-bottom: 5rem;">
+                    <div class="inline-flex items-center gap-3 mb-6 bg-black/5 border border-black/10 px-4 py-2 rounded-full">
+                        <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="section-badge text-gray-400 uppercase">Muestrario de Aplicación 03 / Wellness</span>
+                    </div>
+                    <h2 class="text-5xl md:text-8xl font-black negative-tracking leading-none mb-10">
+                        BIENESTAR <br><span class="text-gray-400">CIENTÍFICO.</span>
+                    </h2>
+                    <p class="max-w-lg mx-auto text-gray-500 text-lg font-light leading-relaxed">
+                        Demostración de interfaces para el sector médico. Higiene visual, protocolos de seguridad y autoridad estética inmaculada.
+                    </p>
+                </section>
+
+                <section class="px-6 pb-32 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-10 py-10">
+                        <div class="flex gap-8 items-start group">
+                            <div class="w-14 h-14 bg-white rounded-[20px] shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1 uppercase tracking-tight">Servicio de Muestra A</h4>
+                                <p class="text-gray-500 text-sm mb-4">Arquitectura de Servicio</p>
+                                <button class="text-[9px] font-black uppercase tracking-widest border-b border-black pb-1">Ver Protocolo</button>
+                            </div>
                         </div>
-                        <div class="w-16 h-3 bg-gray-100 rounded-full"></div>
+                        <div class="flex gap-8 items-start group">
+                            <div class="w-14 h-14 bg-white rounded-[20px] shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1 uppercase tracking-tight">Servicio de Muestra B</h4>
+                                <p class="text-gray-500 text-sm mb-4">Estructura de Atención</p>
+                                <button class="text-[9px] font-black uppercase tracking-widest border-b border-black pb-1">Ver Protocolo</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="h-6 w-3/4 bg-gray-900 rounded-lg mb-3"></div>
-                    <div class="h-2 w-1/2 bg-gray-200 rounded-full mb-6"></div>
-                    <div class="h-12 w-full bg-blue-600 rounded-2xl"></div>
-                </div>
-            </div>
-            <div class="p-10 flex flex-col flex-grow">
-                <div class="flex items-center space-x-3 mb-6">
-                    <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-blue-400 uppercase tracking-widest">Salud</span>
-                    <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">2025</span>
-                </div>
-                <h2 class="text-2xl font-bold mb-3 tracking-tight">Eme Vet Web App</h2>
-                <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                    Optimización del flujo de atención para emergencias veterinarias. Interfaz quirúrgica diseñada para la toma de decisiones rápida.
-                </p>
-                <div class="mt-auto">
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-white hover:text-blue-500 transition-colors group">
-                        Explorar Solución <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-        </article>
-
-        <!-- PROYECTO 2: Showroom Bloom -->
-        <article class="bento-card">
-            <div class="preview-window">
-                <div class="mockup-grid">
-                    <div class="mock-item">
-                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&auto=format&fit=crop" alt="Moda 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    <div class="premium-card bg-white h-[500px] border border-gray-200 flex items-center justify-center italic text-gray-200 uppercase tracking-[1em] text-[10px]">
+                        Medical Design Logic Preview
                     </div>
-                    <div class="mock-item">
-                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&auto=format&fit=crop" alt="Moda 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                    </div>
-                </div>
+                </section>
             </div>
-            <div class="p-10 flex flex-col flex-grow">
-                <div class="flex items-center space-x-3 mb-6">
-                    <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-purple-400 uppercase tracking-widest">Moda</span>
-                </div>
-                <h2 class="text-2xl font-bold mb-3 tracking-tight">Bloom Fashion Hub</h2>
-                <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                    Catálogo dinámico que automatiza el inventario y conecta la venta directa con WhatsApp. Estética visual de alta costura.
-                </p>
-                <div class="mt-auto">
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-white hover:text-purple-500 transition-colors group">
-                        Ver Catálogo <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-        </article>
-
-        <!-- PROYECTO 3: AI Digital Card -->
-        <article class="bento-card">
-            <div class="preview-window">
-                <div class="mockup-iphone">
-                    <div class="w-8 h-8 bg-white rounded-lg mx-auto mt-6 mb-4"></div>
-                    <div class="h-1 w-10 bg-white/20 mx-auto rounded-full mb-8"></div>
-                    <div class="space-y-3 px-2">
-                        <div class="h-10 w-full bg-white/5 rounded-xl border border-white/10"></div>
-                        <div class="h-10 w-full bg-white rounded-xl"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="p-10 flex flex-col flex-grow">
-                <div class="flex items-center space-x-3 mb-6">
-                    <span class="status-badge px-4 py-1.5 text-[10px] font-bold text-yellow-500 uppercase tracking-widest">Tech</span>
-                </div>
-                <h2 class="text-2xl font-bold mb-3 tracking-tight">Identity AI Card</h2>
-                <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                    Tu tarjeta de presentación digital con motor de IA Gemini integrado. Consultoría estratégica disponible 24/7 para tus clientes.
-                </p>
-                <div class="mt-auto">
-                    <!-- ENLACE ACTUALIZADO AQUÍ -->
-                    <a href="https://chomp-best.github.io/ia/" class="inline-flex items-center text-sm font-semibold text-white hover:text-yellow-500 transition-colors group">
-                        Probar IA <i class="fa-solid fa-arrow-right ml-3 text-xs group-hover:translate-x-2 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-        </article>
-
-        <!-- PROYECTO 4: Próximamente -->
-        <article class="bento-card border-dashed border-white/10 bg-transparent">
-            <div class="preview-window opacity-20">
-                <i class="fa-solid fa-plus text-5xl text-white"></i>
-            </div>
-            <div class="p-10 flex flex-col flex-grow">
-                <h2 class="text-2xl font-bold mb-3 tracking-tight text-gray-300">Tu Proyecto Aquí</h2>
-                <p class="text-sm text-gray-500 leading-relaxed mb-8">
-                    Estoy buscando el próximo desafío para aplicar diseño de vanguardia y automatización inteligente.
-                </p>
-                <div class="mt-auto">
-                    <a href="https://wa.me/3795041420?text=Hola%20Eliseo%2C%20me%20gustar%C3%ADa%20iniciar%20un%20proyecto%20con%20tu%20studio." 
-                       target="_blank"
-                       class="inline-flex items-center text-sm font-bold text-blue-500 uppercase tracking-widest hover:text-blue-400 transition-colors group">
-                        Iniciar Consultoría <i class="fa-solid fa-paper-plane ml-3 text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-        </article>
-
+        </div>
     </main>
 
-    <footer class="max-w-5xl mx-auto mt-32 text-center py-12 border-t border-white/5 opacity-40">
-        <p class="text-[9px] font-bold tracking-[0.6em] uppercase">Built with Integrity & Excellence — Eliseo Studio</p>
+    <!-- FLOATING IA BUTTON -->
+    <div class="fixed bottom-10 right-10 z-50">
+        <button onclick="window.open('https://chomp-best.github.io/ia/', '_blank')" class="w-16 h-16 bg-white text-black premium-card flex items-center justify-center group shadow-2xl hover:scale-110 active:scale-95 transition-all">
+            <svg class="group-hover:rotate-12 transition-transform" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <div class="absolute right-full mr-6 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-black px-5 py-2 rounded-full section-badge whitespace-nowrap shadow-xl">
+                Consultoría IA
+            </div>
+        </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-24 px-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+            <div>
+                <h2 class="text-xl font-black uppercase tracking-[0.3em] mb-4">Eliseo Studio</h2>
+                <p class="text-gray-500 text-sm font-light italic max-w-xs">"En un mundo lleno de ruido, el silencio es el arma más poderosa."</p>
+            </div>
+            <div class="flex gap-12">
+                <div class="flex flex-col gap-2">
+                    <span class="section-badge text-gray-600 uppercase">Contexto</span>
+                    <p class="text-[9px] text-gray-500 uppercase">Ambiente de Demostración</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <span class="section-badge text-gray-600 uppercase">Contacto</span>
+                    <a href="#" class="text-xs text-gray-400 hover:text-white transition-colors underline decoration-white/10">Agendar Consultoría</a>
+                </div>
+            </div>
+            <p class="section-badge text-gray-800 uppercase">© 2025 Architecture for the Matrix</p>
+        </div>
     </footer>
+
+    <script>
+        function switchDemo(demoId) {
+            // Hide all sections
+            document.querySelectorAll('.demo-section').forEach(section => {
+                section.classList.add('demo-hidden');
+            });
+            
+            // Show target section
+            document.getElementById('demo-' + demoId).classList.remove('demo-hidden');
+
+            // Update Navbar buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-white', 'border-white');
+                btn.classList.add('text-gray-500', 'border-transparent');
+            });
+            const activeBtn = document.getElementById('btn-' + demoId);
+            activeBtn.classList.add('text-white', 'border-white');
+            activeBtn.classList.remove('text-gray-500', 'border-transparent');
+
+            // Special case for light theme wellness
+            if(demoId === 'wellness') {
+                document.body.style.backgroundColor = '#F5F5F7';
+            } else {
+                document.body.style.backgroundColor = '#000000';
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
